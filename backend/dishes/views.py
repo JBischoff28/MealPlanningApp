@@ -6,7 +6,7 @@ from .models import Dish
 from .serializers import DishSerializer
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
+@permission_classes([IsAuthenticated]) # For development use only
 def display_all_dishes(request):
     dishes = Dish.objects.all()
     serializer = DishSerializer(dishes)
