@@ -37,6 +37,13 @@ def user_meals(request):
     
 """
 This function serves to allow authenticated users to send GET, PUT, and DELETE API requests to the API.
+The function will return one Meal object that matches the PK sent in the request.
+    - If a GET request is sent, the API will return the Meal object with the pk that was sent in the request.
+    - If a PUT request is sent, the request data will be validated.
+        If the request data is valid, the API will update the Meal that matches the PK with the request data.
+        If the request data is invalid, the API will return a 400 - BAD REQUEST error.
+    - If a DELETE request is sent, the API will delete the Meal with the same PK as the PK sent in the request.
+
 """
 @api_view(['GET', 'DELETE', 'PUT'])
 @permission_classes([IsAuthenticated])
@@ -51,10 +58,9 @@ def user_singleMeal(request, pk):
         serializer = MealSerializer(meal, data=request.data)
         if serializer.is_valid():
             serializer.save(user=request.user)
-            return Response(data=serializer.data, status=status.HTTP_201_CREATED)
+            return Response(data=serializer.data, status=status.HTTP_202_ACCEPTED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'DELETE':
         meal.delete()
         return Response(status=status.HTTP_404_NOT_FOUND)
-
-
+    
