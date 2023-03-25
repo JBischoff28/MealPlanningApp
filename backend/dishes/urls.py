@@ -4,5 +4,5 @@ from dishes import views
 urlpatterns = [
     path('', views.display_all_dishes),
     path('mydishes/', views.user_dishes),
-    path('mydish/', views.user_singleDish)
+    path('mydish/<int:pk>/', views.user_singleDish)
 ]
