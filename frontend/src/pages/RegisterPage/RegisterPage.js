@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import AuthContext from "../../context/AuthContext";
 import useCustomForm from "../../hooks/useCustomForm";
+import { Link } from "react-router-dom";
 
 const RegisterPage = () => {
   const { registerUser } = useContext(AuthContext);
@@ -69,6 +70,7 @@ const RegisterPage = () => {
           special characters!
         </p>
         <button>Register!</button>
+        <Link to="/login">Back</Link>
       </form>
     </div>
   );
