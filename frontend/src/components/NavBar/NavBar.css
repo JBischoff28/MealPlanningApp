@@ -9,9 +9,9 @@ li {
 }
 
 .navBar {
-  background: rgba(0, 0, 0, 0.432);
-  box-shadow: 4px 2px 5px gray;
-  color: white;
+  background: rgba(0, 0, 0, 0.507);
+  box-shadow: 4px 2px 5px rgb(17, 17, 17);
+  color: rgb(0, 0, 0);
   padding: 1.5rem 2rem;
 }
 

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from '../../context/AuthContext';
+import Navbar from '../../components/NavBar/NavBar';
 import './LandingPage.css';
 
 
@@ -19,11 +20,12 @@ const LandingPage = (props) => {
         }
     })
 
-    return ( 
+    return (
         <div className='landingContainer'>
             <div>
-                <t1>This will be the landing page!</t1>
+                <Navbar />
             </div>
+            <div className='mask' />
         </div>
      );
 }
