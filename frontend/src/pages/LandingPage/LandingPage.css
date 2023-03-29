@@ -49,3 +49,30 @@
     border-color: black;
     background-color: #46432a98;
 }
+
+.aboutTitle {
+    width:19.75em;
+    height: 5em;
+    background-color: rgba(255, 255, 255, 0);
+    border-bottom: 3px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutTitle h2 {
+    font-size: 2em;
+    font-weight: 400;
+    color: #C86621;
+}
+
+.aboutText ul{
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutText ul li{
+    display: flex;
+}
