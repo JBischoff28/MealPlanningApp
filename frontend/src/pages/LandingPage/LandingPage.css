@@ -1,11 +1,33 @@
 .landingContainer {
-    height: 100%;
+    height: fit-content;
     width: 100%;
     background-image: url('../../../public/landingImg1.jpg');
+    background-repeat: no-repeat;
 }
 
-.mask {
+
+.pageBody {
+    height: 1250px;
     width: 100%;
-    height: 1100px;
-    background: rgba(104, 104, 104, 0.185);
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.192);
+}
+
+.headerContainer {
+    width: 30em;
+    height: 8em;
+    background-color: rgba(255, 255, 255, 0);
+    margin-top: 9em;
+    border: 5px;
+    border-style: solid;
+    border-color: #C86621;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headerText {
+    color: #C86621;
+    font-size: 1.5em;
 }

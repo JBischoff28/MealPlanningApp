@@ -20,9 +20,6 @@ import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
 
-  const { logoutUser, user } = useContext(AuthContext);
-  const navigate = useNavigate();
-
   return (
     <div>
       <Routes>

@@ -15,9 +15,7 @@ const LandingPage = (props) => {
         if (user) {
             navigate("/home");
         }
-        else {
-            {}
-        }
+        else {}
     })
 
     return (
@@ -25,7 +23,13 @@ const LandingPage = (props) => {
             <div>
                 <Navbar />
             </div>
-            <div className='mask' />
+            <div className='pageBody'>
+                <div className='headerContainer'>
+                    <div className='headerText'>
+                        <h2>What is mealCONTROL?</h2>
+                    </div>
+                </div>
+            </div>
         </div>
      );
 }
