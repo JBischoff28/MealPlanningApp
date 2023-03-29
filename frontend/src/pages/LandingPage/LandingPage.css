@@ -7,11 +7,12 @@
 
 
 .pageBody {
-    height: 1250px;
+    height: 1180px;
     width: 100%;
     display: flex;
     justify-content: center;
     background-color: rgba(255, 255, 255, 0.192);
+    flex-wrap: wrap;
 }
 
 .headerContainer {
@@ -30,4 +31,21 @@
 .headerText {
     color: #C86621;
     font-size: 1.5em;
+}
+
+.aboutSection {
+    width: 100%;
+    height: fit-content;
+    margin-left: 9.5em;
+    margin-right: 9.5em;
+}
+
+.aboutContainer {
+    width: 20em;
+    height: 40em;
+    background: grey;
+    border: 3px;
+    border-style: solid;
+    border-color: black;
+    background-color: #46432a98;
 }
