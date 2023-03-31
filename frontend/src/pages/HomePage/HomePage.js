@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
-
+import Navbar from "../../components/NavBar/NavBar";
 import axios from "axios";
 
 const HomePage = () => {
@@ -26,14 +26,13 @@ const HomePage = () => {
     fetchCars();
   }, [token]);
   return (
-    <div className="container">
-      <h1>Home Page for {user.username}!</h1>
-      {cars &&
-        cars.map((car) => (
-          <p key={car.id}>
-            {car.year} {car.model} {car.make}
-          </p>
-        ))}
+    <div>
+      <div>
+        <Navbar />
+      </div>
+      <div className="homeContainer">
+        <p>this is the home page.</p>
+      </div>
     </div>
   );
 };
