@@ -19,7 +19,7 @@
     width: 30em;
     height: 8em;
     background-color: rgba(255, 255, 255, 0);
-    margin-top: 9em;
+    margin-top: 5em;
     border: 5px;
     border-style: solid;
     border-color: #C86621;
@@ -75,4 +75,21 @@
 
 .aboutText ul li{
     display: flex;
+}
+
+button {
+    width: 12em;
+    height: 3em;
+    border-radius: 35px;
+    background-color: #c8672185;
+    cursor: pointer;
+    font-size: 20px;
+    color: azure;
+    border: 2px;
+    border-style: solid;
+    border-color: black;
+}
+button:hover {
+    background-color: #46432a98;
+    box-shadow: -2px rgba(0, 0, 0, 0.459);
 }

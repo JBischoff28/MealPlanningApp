@@ -65,6 +65,11 @@ const LandingPage = (props) => {
                         </li>
                     </ul>
                 </div>
+                {user ? (
+                    {}
+                ) : (
+                    <button onClick={() => navigate("/register")}>REGISTER TODAY!!!</button>
+                )}
             </div>
         </div>
      );
