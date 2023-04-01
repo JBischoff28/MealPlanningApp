@@ -20,7 +20,7 @@ const HomeNavbar = () => {
           </Link>
           <div className="userWelcome">
             {user ? (
-              <b style={{ textAlign: "center" }}>Welcome: {user.username}</b>
+              <p style={{ textAlign: "center" }}>Welcome: {user.username}</p>
             ) : (
               <b>{}</b>
             )}
