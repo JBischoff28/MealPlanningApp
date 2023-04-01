@@ -2,10 +2,18 @@ ul {
   display: flex;
   justify-content: space-between;
   list-style-type: none;
+  align-items: center;
 }
 
 li {
   font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+}
+
+li .userWelcome {
+  font-size: 0.75em;
 }
 
 .navBar {

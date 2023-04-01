@@ -77,7 +77,7 @@
     display: flex;
 }
 
-button {
+#bigRegButton {
     width: 12em;
     height: 3em;
     border-radius: 35px;
@@ -89,7 +89,7 @@ button {
     border-style: solid;
     border-color: black;
 }
-button:hover {
+#bigRegButton:hover {
     background-color: #46432a98;
     box-shadow: -2px rgba(0, 0, 0, 0.459);
 }
