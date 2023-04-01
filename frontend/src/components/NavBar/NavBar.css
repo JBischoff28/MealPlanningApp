@@ -12,10 +12,6 @@ li {
   gap: 1.5em;
 }
 
-li .userWelcome {
-  font-size: 0.75em;
-}
-
 .navBar {
   background: rgba(0, 0, 0, 0.452);
   box-shadow: 4px 2px 5px rgb(17, 17, 17);

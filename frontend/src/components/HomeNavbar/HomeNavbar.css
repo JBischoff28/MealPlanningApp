@@ -1,0 +1,17 @@
+#homeNavText {
+    background-color: #c86721e6;
+    width: 8em;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+#homeNavText b{
+    padding: 5px;
+}
+
+li .userWelcome {
+    font-size: 0.75em;
+    color: white;
+  }
