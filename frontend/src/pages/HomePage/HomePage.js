@@ -26,10 +26,12 @@ const HomePage = () => {
     };
     fetchCars();
   }, [token]); */
+
+
   return (
     <div className="homeContainer">
       <HomeNavbar />
-      <div className="pageBody">
+      <div className="homePageBody">
         <p>this is the home page.</p>
       </div>
     </div>
