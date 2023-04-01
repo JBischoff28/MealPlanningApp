@@ -16,8 +16,12 @@ const SearchBar = (props) => {
     }
 
     return ( 
-        <div className='searchContainer'>
-        </div>
+        <form>
+            <ul>
+                <li></li>
+                <li></li>
+            </ul>
+        </form>
      );
 }
  
