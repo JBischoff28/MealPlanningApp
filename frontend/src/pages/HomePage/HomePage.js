@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import HomeNavbar from "../../components/HomeNavbar/HomeNavbar.jsx";
 import axios from "axios";
+import { app_id, app_key } from "../../../src/localKey";
 import "./HomePage.css";
 
 const HomePage = () => {
