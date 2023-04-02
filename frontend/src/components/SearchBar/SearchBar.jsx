@@ -19,8 +19,15 @@ const SearchBar = ({ setRecipes }) => {
     function handleSubmit(event) {
         event.preventDefault();
         console.log(search);
-        searchRecipes(search);
-        setSearch('');
+        if (search !== '') {
+            searchRecipes(search);
+            setSearch('');
+        }
+        else {
+            console.log("Input required!");
+            alert("Input is required to search!");
+        }
+
     }
 
     return ( 
