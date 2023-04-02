@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import HomeNavbar from "../../components/HomeNavbar/HomeNavbar.jsx";
+import RecipeResult from "../../components/RecipeResult/RecipeResult";
 import axios from "axios";
 import { app_id, app_key } from "../../../src/localKey";
 import "./HomePage.css";
@@ -20,7 +21,8 @@ const HomePage = () => {
   async function fetchRecipes() {
     try {
       let response = await axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=well%20rounded&app_id=${app_id}&app_key=${app_key}&random=true`);
-      console.log(response.data);
+      console.log(response.data.hits);
+      setRecipes(response.data.hits);
     } catch (error) {
       console.log(error);
     }
@@ -31,9 +33,14 @@ const HomePage = () => {
     <div className="homeContainer">
       <HomeNavbar />
       <div className="homePageBody">
-        <SearchBar setRecipes={setRecipes} />
+        <div className="searchBar">
+          <SearchBar setRecipes={setRecipes} />
+        </div>
         <p>this is the home page.</p>
-        <button onClick={fetchRecipes}>Run Test - fetchRecipes</button>
+        <button id='testButton' onClick={fetchRecipes}>Run Test - fetchRecipes</button>
+        <div className="searchResults">
+          <RecipeResult recipes={recipes}/>
+        </div>
       </div>
     </div>
   );
