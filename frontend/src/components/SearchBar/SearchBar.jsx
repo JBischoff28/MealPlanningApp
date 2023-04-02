@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { app_id, app_key } from '../../localKey';
 
-const SearchBar = (props) => {
+const SearchBar = ({ setRecipes }) => {
 
     const [search, setSearch] = useState("");
     
@@ -10,16 +10,28 @@ const SearchBar = (props) => {
         try {
             let response = await axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=${search}&app_id=${app_id}&app_key=${app_key}`);
             console.log(response.data);
+            setRecipes(response.data.hits);
         } catch (error) {
             console.log(error);
         }
     }
 
+    function handleSubmit(event) {
+        event.preventDefault();
+        console.log(search);
+        searchRecipes(search);
+        setSearch('');
+    }
+
     return ( 
-        <form>
+        <form onSubmit={(event) => handleSubmit(event)}>
             <ul>
-                <li></li>
-                <li></li>
+                <li>
+                    <input placeholder='Search for recipes...' type='text' value={search} onChange={(event) => setSearch(event.target.value)} />
+                </li>
+                <li>
+                    <button type='submit'>Search</button>
+                </li>
             </ul>
         </form>
      );

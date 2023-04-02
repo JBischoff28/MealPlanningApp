@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
+import SearchBar from "../../components/SearchBar/SearchBar";
 import HomeNavbar from "../../components/HomeNavbar/HomeNavbar.jsx";
 import axios from "axios";
 import { app_id, app_key } from "../../../src/localKey";
@@ -30,6 +31,7 @@ const HomePage = () => {
     <div className="homeContainer">
       <HomeNavbar />
       <div className="homePageBody">
+        <SearchBar setRecipes={setRecipes} />
         <p>this is the home page.</p>
         <button onClick={fetchRecipes}>Run Test - fetchRecipes</button>
       </div>
