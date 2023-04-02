@@ -17,13 +17,14 @@ import Footer from "./components/Footer/Footer";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
+import RecipePage from "./pages/RecipePage/RecipePage";
 
 function App() {
 
   return (
     <div>
       <Routes>
-        <Route path="/" element={<LandingPage />}/>
+        <Route path="/" element={<LandingPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/home"
@@ -33,6 +34,7 @@ function App() {
             </PrivateRoute>
           }
         />
+        <Route path="/recipe/:recipeId" element={<RecipePage />} />
       </Routes>
       <Footer />
     </div>
