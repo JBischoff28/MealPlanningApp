@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import HomeNavbar from "../../components/HomeNavbar/HomeNavbar.jsx";
+import SearchFilters from "../../components/SearchFilters/SearchFilters";
 import RecipeResult from "../../components/RecipeResult/RecipeResult";
 import axios from "axios";
 import { app_id, app_key } from "../../../src/localKey";
@@ -33,11 +34,12 @@ const HomePage = () => {
     <div className="homeContainer">
       <HomeNavbar />
       <div className="homePageBody">
+        <div className="searchFilters">
+          <SearchFilters />
+        </div>
         <div className="searchBar">
           <SearchBar setRecipes={setRecipes} />
         </div>
-        <p>this is the home page.</p>
-        <button id='testButton' onClick={fetchRecipes}>Run Test - fetchRecipes</button>
         <div className="searchResults">
           <RecipeResult recipes={recipes}/>
         </div>
