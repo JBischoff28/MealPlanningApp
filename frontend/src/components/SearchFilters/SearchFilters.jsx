@@ -5,16 +5,12 @@ const SearchFilters = (props) => {
 
     const [mealType, setMealType] = useState('');
     const [dishType, setDishType] = useState('');
-    const [isBalanced, setIsBalanced] = useState(true);
-    const [isFiber, setIsFiber] = useState(true);
-    const [isProtein, setIsProtein] = useState(true);
-    const [isCarb, setIsCarb] = useState(true);
-    const [isFat, setIsFat] = useState(true);
-    const [isSodium, setIsSodium] = useState(true);
-
-    function handleSubmit(event) {
-        event.preventDefault();
-    }
+    const [isBalanced, setIsBalanced] = useState(false);
+    const [isFiber, setIsFiber] = useState(false);
+    const [isProtein, setIsProtein] = useState(false);
+    const [isCarb, setIsCarb] = useState(false);
+    const [isFat, setIsFat] = useState(false);
+    const [isSodium, setIsSodium] = useState(false);
 
     const onChangeBal = () => {
         setIsBalanced(!isBalanced);
@@ -41,13 +37,24 @@ const SearchFilters = (props) => {
         console.log(`State is: ${isSodium}`);
     }
 
+    function checkSelected(event) {
+        event.preventDefault();
+        console.log(mealType);
+        console.log(dishType);
+        console.log(isBalanced);
+        console.log(isFiber);
+        console.log(isProtein);
+        console.log(isCarb);
+        console.log(isFat);
+        console.log(isSodium);
+    }
 
     return ( 
         <div className='filtersContainer'>
-            <form className='filtersBody' onSubmit={(event) => handleSubmit(event)}>
+            <form className='filtersBody' onSubmit={(event) => checkSelected(event)}>
                 <div className='mealType'>
                     <label>Choose a Meal Type:</label>
-                    <select name='mealType' id='mealOptions' value={mealType} onChange={(event) => setMealType(event.target.value)}>
+                    <select name='mealType' id='mealOptions' onChange={(event) => setMealType(event.target.value)}>
                         <option defaultValue='none'>Select one...</option>
                         <option value='breakfast'>Breakfast</option>
                         <option value='brunch'>Brunch</option>
@@ -59,7 +66,7 @@ const SearchFilters = (props) => {
                 <div className='dishType'>
                     <label>Choose a Dish Type:</label>
                     <select name='dishType' id='dishOptions' onChange={(event) => setDishType(event.target.value)}>
-                        <option defaultValue=''></option>
+                        <option defaultValue='none'>Select one...</option>
                         <option value='alcohol cocktail'>Alcohol Cocktail</option>
                         <option value='biscuits and cookies'>Biscuits and Cookies</option>
                         <option value='bread'>Bread</option>
