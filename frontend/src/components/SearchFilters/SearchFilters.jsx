@@ -12,31 +12,6 @@ const SearchFilters = (props) => {
     const [isFat, setIsFat] = useState(false);
     const [isSodium, setIsSodium] = useState(false);
 
-    const onChangeBal = () => {
-        setIsBalanced(!isBalanced);
-        console.log(`State is: ${isBalanced}`);
-    }
-    const onChangeFib = () => {
-        setIsFiber(!isFiber);
-        console.log(`State is: ${isFiber}`);
-    }
-    const onChangePro = () => {
-        setIsProtein(!isProtein);
-        console.log(`State is: ${isProtein}`);
-    }
-    const onChangeCarb = () => {
-        setIsCarb(!isCarb);
-        console.log(`State is: ${isCarb}`);
-    }
-    const onChangeFat = () => {
-        setIsFat(!isFat);
-        console.log(`State is: ${isFat}`);
-    }
-    const onChangeSod = () => {
-        setIsSodium(!isSodium);
-        console.log(`State is: ${isSodium}`);
-    }
-
     function checkSelected(event) {
         event.preventDefault();
         console.log(mealType);
@@ -77,7 +52,7 @@ const SearchFilters = (props) => {
                         <option value='eggs'>Eggs</option>
                         <option value='ice cream and custard'>Ice Cream and Custard</option>
                         <option value='main course'>Main Course</option>
-                        <option value='pancake'>Pancakse</option>
+                        <option value='pancake'>Pancake</option>
                         <option value='pasta'>Pasta</option>
                         <option value='pastry'>Pastry</option>
                         <option value='pies and tarts'>Pies and Tarts</option>
@@ -97,27 +72,27 @@ const SearchFilters = (props) => {
                 <div className='dietsToggle'>
                     <div className='balanced'>
                         <label>Balanced</label>
-                        <input type='checkbox' id='balancedToggle' onChange={(event) => onChangeBal(event)}/>
+                        <input type='checkbox' id='balancedToggle' onChange={(event) => setIsBalanced(!isBalanced)}/>
                     </div>
                     <div className='fiber'>
                         <label>High-Fiber</label>
-                        <input type='checkbox' id='fiberToggle' onChange={(event) => onChangeFib(event)}/>
+                        <input type='checkbox' id='fiberToggle' onChange={(event) => setIsFiber(!isFiber)}/>
                     </div>
                     <div className='protein'>
                         <label>High-Protein</label>
-                        <input type='checkbox' id='proteinToggle' onChange={(event) => onChangePro(event)}/>
+                        <input type='checkbox' id='proteinToggle' onChange={(event) => setIsProtein(!isProtein)}/>
                     </div>
                     <div className='carb'>
                         <label>Low-Carb</label>
-                        <input type='checkbox' id='carbToggle' onChange={(event) => onChangeCarb(event)}/>
+                        <input type='checkbox' id='carbToggle' onChange={(event) => setIsCarb(!isCarb)}/>
                     </div>
                     <div className='fat'>
                         <label>Low-Fat</label>
-                        <input type='checkbox' id='fatToggle' onChange={(event) => onChangeFat(event)}/>
+                        <input type='checkbox' id='fatToggle' onChange={(event) => setIsFat(!isFat)}/>
                     </div>
                     <div className='sodium'>
                         <label>Low-Sodium</label>
-                        <input type='checkbox' id='sodiumToggle' onChange={(event) => onChangeSod(event)}/>
+                        <input type='checkbox' id='sodiumToggle' onChange={(event) => setIsSodium(!isSodium)}/>
                     </div>
                 </div>
                 <button type='submit'>Apply Filters</button>
