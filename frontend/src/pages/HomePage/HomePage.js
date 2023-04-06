@@ -29,13 +29,12 @@ const HomePage = () => {
     }
   }
 
-
   return (
     <div className="homeContainer">
       <HomeNavbar />
       <div className="homePageBody">
         <div className="searchFilters">
-          <SearchFilters />
+          <SearchFilters recipes={recipes} setRecipes={setRecipes}/>
         </div>
         <div className="searchBar">
           <SearchBar setRecipes={setRecipes} />
