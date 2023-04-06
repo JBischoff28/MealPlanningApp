@@ -26,6 +26,15 @@ const HomeNavbar = () => {
             )}
           </div>
         </li>
+        <li className="navBtns">
+              <Link to='/meals'>
+                <p>MyMeals</p>
+              </Link>
+              <Link to='/plannedmeals'>
+                <p>Planned Meals</p>
+              </Link>
+              <Link to='/choose'>Choose For Me!</Link>
+        </li>
         <li>
           {user ? (
             <button onClick={logoutUser}>Logout</button>
