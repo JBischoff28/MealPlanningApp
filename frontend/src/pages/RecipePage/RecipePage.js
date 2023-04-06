@@ -28,7 +28,7 @@ const RecipePage = (props) => {
     async function saveRecipe(event) {
         event.preventDefault();
         try {
-            let postRequest = axios.post(`http://127.0.0.1:8000/api/dishes/mydishes/`, 
+            let postRequest = await axios.post(`http://127.0.0.1:8000/api/dishes/mydishes/`, 
             {
                 headers: {
                     Authorization: "Bearer " + token,
