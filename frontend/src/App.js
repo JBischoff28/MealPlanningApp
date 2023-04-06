@@ -14,6 +14,7 @@ import Footer from "./components/Footer/Footer";
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
 import RecipePage from "./pages/RecipePage/RecipePage";
+import MealBuilderPage from "./pages/MealBuilderPage/MealBuilderPage";
 
 function App() {
 
@@ -31,6 +32,8 @@ function App() {
           }
         />
         <Route path="/recipe/:recipeId" element={<RecipePage />} />
+        <Route path="/meals" />
+        <Route path="/mealbuilder" element={<MealBuilderPage />} />
       </Routes>
       <Footer />
     </div>
