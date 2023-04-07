@@ -19,7 +19,7 @@ const ChooseForMePage = () => {
     }
 
     function returnRandomRecipe(randomRecipes) {
-        let item = randomRecipes[Math.floor(Math.random()*randomRecipes.length)];
+        let item = randomRecipes[Math.floor(Math.random() * randomRecipes.length)];
         setGenerated(item);
     }
 
@@ -29,19 +29,32 @@ const ChooseForMePage = () => {
         setTimeout(returnRandomRecipe(randomRecipes), 2000);
     }
 
-    return ( 
+    function generateConditional(generated) {
+        if (generated !== {}) {
+            return (
+                <p>{generated.recipe.label}</p>
+            );
+        }
+        else {
+            return (
+                <p>Press GO!</p>
+            );
+        }
+    }
+
+    return (
         <div className='chooseContainer'>
             <HomeNavbar />
             <form className='inputBar' onSubmit={(event) => handleSubmit(event)}>
                 <label>What kind of food do you feel like eating?</label>
-                <input type='text' placeholder='Give us keywords!' value={keywords} onChange={(event) => setKeywords(event.target.value)}/>
+                <input type='text' placeholder='Give us keywords!' value={keywords} onChange={(event) => setKeywords(event.target.value)} />
                 <button type='submit'>GO!</button>
             </form>
             <div className='randomResult'>
-                <p>{generated.recipe.label}</p>
+                {generateConditional(generated)}
             </div>
         </div>
-     );
+    );
 }
- 
+
 export default ChooseForMePage;
