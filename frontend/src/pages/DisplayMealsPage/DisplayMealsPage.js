@@ -7,6 +7,7 @@ import MealCard from '../../components/MealCard/MealCard';
 const DisplayMealsPage = (props) => {
 
     const [user, token] = useAuth();
+    const [mymeals, setMyMeals] = useState([]);
 
     useEffect(() => {
         getUserMeals();
@@ -20,6 +21,7 @@ const DisplayMealsPage = (props) => {
                 }
             });
             console.log(response.data);
+            setMyMeals(response.data);
         } catch (error) {
             console.log(error)
         }
@@ -29,7 +31,7 @@ const DisplayMealsPage = (props) => {
         <div className="mealsContainer">
             <HomeNavbar />
             <div className='mealsBody'>
-                <MealCard />
+                <MealCard mymeals={mymeals}/>
             </div>
         </div>
      );
