@@ -9,7 +9,6 @@ const SearchBar = ({ setRecipes }) => {
     async function searchRecipes(search) {
         try {
             let response = await axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=${search}&app_id=${app_id}&app_key=${app_key}`);
-            console.log(response.data);
             setRecipes(response.data.hits);
         } catch (error) {
             console.log(error);
@@ -24,7 +23,6 @@ const SearchBar = ({ setRecipes }) => {
             setSearch('');
         }
         else {
-            console.log("Input required!");
             alert("Input is required to search!");
         }
 
