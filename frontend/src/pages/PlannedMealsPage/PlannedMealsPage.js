@@ -1,6 +1,14 @@
+import MealCalendar from '../../components/Calendar/Calendar';
+import HomeNavbar from '../../components/HomeNavbar/HomeNavbar';
+
+
 const PlannedMealsPage = () => {
+
     return ( 
-        <div></div>
+        <div>
+            <HomeNavbar />
+            <MealCalendar />
+        </div>
      );
 }
  
