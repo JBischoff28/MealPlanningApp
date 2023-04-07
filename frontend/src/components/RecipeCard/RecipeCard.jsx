@@ -869,7 +869,7 @@ const RecipeCard = (props) => {
 
     function manipulateDishes(foodId) {
         let recipeId = editURI(foodId);
-        fetchDishes(recipeId);
+        /*fetchDishes(recipeId);*/
     }
 
     async function fetchDishes(recipeId) {
@@ -889,7 +889,11 @@ const RecipeCard = (props) => {
                     return (
                         <div className='dish' key={dish.id}>
                             <Link to={`/recipe/${editURI(dish.foodId)}`}>
-                                <img src={recObj.recipe.images.THUMBNAIL.url} alt="" /> <p>{recObj.recipe.label}</p>
+                                <div className='mealLayoutContainer'>
+                                    <img src={recObj.recipe.images.THUMBNAIL.url} alt="" />
+                                    <p>{recObj.recipe.label}</p>
+                                    <p>Dish Calories: {recObj.recipe.calories}</p>
+                                </div>
                             </Link>
                         </div>
                     );

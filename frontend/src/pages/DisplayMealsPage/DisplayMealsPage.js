@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import HomeNavbar from '../../components/HomeNavbar/HomeNavbar';
 import useAuth from '../../hooks/useAuth';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import MealCard from '../../components/MealCard/MealCard';
 
@@ -9,9 +10,9 @@ const DisplayMealsPage = (props) => {
     const [user, token] = useAuth();
     const [mymeals, setMyMeals] = useState([]);
 
-    /*useEffect(() => {
+    useEffect(() => {
         getUserMeals();
-    }, []);*/
+    }, []);
 
     async function getUserMeals() {
         try {
@@ -20,7 +21,7 @@ const DisplayMealsPage = (props) => {
                     Authorization: "Bearer " + token,
                 }
             });
-            setMyMeals(response.data);
+            setMyMeals(response.data)
         } catch (error) {
             console.log(error)
         }
@@ -29,7 +30,9 @@ const DisplayMealsPage = (props) => {
     return ( 
         <div className="mealsContainer">
             <HomeNavbar />
-            <button onClick={getUserMeals}>TEST</button>
+            <div className='savedRecipesBtn'>
+                <Link to='/recipes'>Saved Recipes</Link>
+            </div>
             <div className='mealsBody'>
                 <MealCard mymeals={mymeals}/>
             </div>

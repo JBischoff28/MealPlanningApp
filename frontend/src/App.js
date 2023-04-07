@@ -18,15 +18,28 @@ import MealBuilderPage from "./pages/MealBuilderPage/MealBuilderPage";
 import DisplayMealsPage from "./pages/DisplayMealsPage/DisplayMealsPage";
 import ChooseForMePage from "./pages/ChooseForMePage/ChooseForMePage";
 import PlannedMealsPage from "./pages/PlannedMealsPage/PlannedMealsPage";
+import DisplayRecipesPage from './pages/DisplayRecipesPage/DisplayRecipesPage';
 
 function App() {
 
   return (
     <div>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/"
+          element={
+            <LandingPage />
+          }
+        />
+        <Route path="/register"
+          element={
+            <RegisterPage />
+          }
+        />
+        <Route path="/login"
+          element={
+            <LoginPage />
+          }
+        />
         <Route path="/home"
           element={
             <PrivateRoute>
@@ -34,11 +47,45 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route path="/recipe/:recipeId" element={<RecipePage />} />
-        <Route path="/meals" element={<DisplayMealsPage />}/>
-        <Route path="/mealbuilder" element={<MealBuilderPage />} />
-        <Route path="/plannedmeals" element={<PlannedMealsPage />} />
-        <Route path="/choose" element={<ChooseForMePage />} />
+        <Route path="/recipe/:recipeId"
+          element={
+            <RecipePage />
+          }
+        />
+        <Route path="/meals"
+          element={
+            <PrivateRoute>
+              <DisplayMealsPage />
+            </PrivateRoute>
+          }
+        />
+        <Route path="/mealbuilder"
+          element={
+            <PrivateRoute>
+              <MealBuilderPage />
+            </PrivateRoute>
+          }
+        />
+        <Route path="/plannedmeals"
+          element={
+            <PrivateRoute>
+              <PlannedMealsPage />
+            </PrivateRoute>
+          }
+        />
+        <Route path="/choose"
+          element={
+            <PrivateRoute>
+              <ChooseForMePage />
+            </PrivateRoute>
+          }
+        />
+        <Route path="/recipes" element={
+          <PrivateRoute>
+            <DisplayRecipesPage />
+          </PrivateRoute>
+        }
+        />
       </Routes>
       <Footer />
     </div>
