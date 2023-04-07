@@ -10,7 +10,7 @@ const RecipePage = (props) => {
     const [user, token] = useAuth();
     const { recipeId } = useParams();
     const [thisRecipe, setThisRecipe] = useState([]);
-
+    console.log(recipeId)
     useEffect(() => {
         GetRecipe();
     }, []);

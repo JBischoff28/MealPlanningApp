@@ -9,9 +9,9 @@ const DisplayMealsPage = (props) => {
     const [user, token] = useAuth();
     const [mymeals, setMyMeals] = useState([]);
 
-    useEffect(() => {
+    /*useEffect(() => {
         getUserMeals();
-    }, []);
+    }, []);*/
 
     async function getUserMeals() {
         try {
@@ -20,7 +20,6 @@ const DisplayMealsPage = (props) => {
                     Authorization: "Bearer " + token,
                 }
             });
-            console.log(response.data);
             setMyMeals(response.data);
         } catch (error) {
             console.log(error)
@@ -30,6 +29,7 @@ const DisplayMealsPage = (props) => {
     return ( 
         <div className="mealsContainer">
             <HomeNavbar />
+            <button onClick={getUserMeals}>TEST</button>
             <div className='mealsBody'>
                 <MealCard mymeals={mymeals}/>
             </div>

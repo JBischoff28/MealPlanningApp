@@ -7,7 +7,7 @@ const ChooseForMePage = () => {
 
     const [randomRecipes, setRandomRecipes] = useState([]);
     const [keywords, setKeywords] = useState('');
-    const [generated, setGenerated] = useState({});
+    const [generated, setGenerated] = useState();
 
     async function getRandomRecipes(keywords) {
         try {
@@ -25,21 +25,7 @@ const ChooseForMePage = () => {
 
     function handleSubmit(event) {
         event.preventDefault();
-        getRandomRecipes(keywords);
-        setTimeout(returnRandomRecipe(randomRecipes), 2000);
-    }
-
-    function generateConditional(generated) {
-        if (generated !== {}) {
-            return (
-                <p>{generated.recipe.label}</p>
-            );
-        }
-        else {
-            return (
-                <p>Press GO!</p>
-            );
-        }
+        getRandomRecipes(keywords).then(returnRandomRecipe(randomRecipes));
     }
 
     return (
@@ -51,7 +37,7 @@ const ChooseForMePage = () => {
                 <button type='submit'>GO!</button>
             </form>
             <div className='randomResult'>
-                {generateConditional(generated)}
+                {generated ? <p>{generated.recipe.label}</p> : <p>Press Go</p>}
             </div>
         </div>
     );
