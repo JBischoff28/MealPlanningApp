@@ -6,7 +6,7 @@ import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
 
 const RecipePage = (props) => {
-    
+
     const [user, token] = useAuth();
     const { recipeId } = useParams();
     const [thisRecipe, setThisRecipe] = useState([]);
@@ -28,15 +28,15 @@ const RecipePage = (props) => {
     async function saveRecipe(event) {
         event.preventDefault();
         try {
-            let postRequest = await axios.post(`http://127.0.0.1:8000/api/dishes/mydishes/`, 
-            {
-                headers: {
-                    Authorization: "Bearer " + token,
-                },
-                data: {
+            let postRequest = await axios.post(`http://127.0.0.1:8000/api/dishes/mydishes/`,
+                {
                     foodId: recipeId,
-                }
-            });
+                },
+                {
+                    headers: {
+                        Authorization: "Bearer " + token,
+                    },
+                });
         } catch (error) {
             console.log(error);
         }
@@ -55,7 +55,7 @@ const RecipePage = (props) => {
                 </div>
             </div>
         </div>
-     );
+    );
 }
- 
+
 export default RecipePage;

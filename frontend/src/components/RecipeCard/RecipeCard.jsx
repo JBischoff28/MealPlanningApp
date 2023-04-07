@@ -36,7 +36,7 @@ const RecipeCard = (props) => {
                         return (
                             <div className='dish' key={dish.id}>
                                 <Link to={`/recipe/${editURI(dish)}`}>
-                                    <p>{dish.foodId}</p>
+                                   <img src={idArray.recipe.images.THUMBNAIL.url} alt="" /> <p>{idArray.recipe.label}</p>
                                 </Link>
                             </div>
                         );
