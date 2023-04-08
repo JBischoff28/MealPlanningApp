@@ -15,7 +15,7 @@ const LandingPage = (props) => {
         if (user) {
             navigate("/home");
         }
-        else {}
+        else { }
     })
 
     return (
@@ -43,7 +43,10 @@ const LandingPage = (props) => {
                                             <p>mealCONTROL helps speed up the decision making process by giving you meal suggestions</p>
                                         </li>
                                         <li>
-                                            <p>You give us keywords, we give you meals!</p>
+                                            <hr />
+                                        </li>
+                                        <li>
+                                            <p id='lowerText'>You give us keywords, we give you meals!</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -54,12 +57,44 @@ const LandingPage = (props) => {
                                 <div className='aboutTitle'>
                                     <h2>Meal Builder</h2>
                                 </div>
+                                <div className='aboutText'>
+                                    <ul>
+                                        <li>
+                                            <p>Want more than one dish in your meal?</p>
+                                        </li>
+                                        <li>
+                                            <p>With AltiMeal, you can send multiple recipes to our meal builder</p>
+                                        </li>
+                                        <li>
+                                            <hr />
+                                        </li>
+                                        <li>
+                                            <p id='lowerText'>Never struggle keeping track of all the tasty dishes you want to make again!</p>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </li>
                         <li>
                             <div className='aboutContainer'>
                                 <div className='aboutTitle'>
                                     <h2>Date Your Meals</h2>
+                                </div>
+                                <div className='aboutText'>
+                                    <ul>
+                                        <li>
+                                            <p>When will you cook your meals?</p>
+                                        </li>
+                                        <li>
+                                            <p>AltiMeal gives you the freedom to not only build a meal, but to plan it on our in-app calendar</p>
+                                        </li>
+                                        <li>
+                                            <hr />
+                                        </li>
+                                        <li>
+                                            <p id='lowerText'>Easily keep track of when you want to cook each meal!</p>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </li>
@@ -68,7 +103,7 @@ const LandingPage = (props) => {
                 <button id='bigRegButton' onClick={() => navigate("/register")}>REGISTER TODAY!!!</button>
             </div>
         </div>
-     );
+    );
 }
- 
+
 export default LandingPage;

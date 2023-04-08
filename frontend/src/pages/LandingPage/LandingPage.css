@@ -71,10 +71,22 @@
 .aboutText ul{
     display: flex;
     flex-direction: column;
+    text-align: center;
+    margin-top: 3em;
 }
 
 .aboutText ul li{
     display: flex;
+    margin-bottom: 1em;
+    color: #ff9f5c;
+}
+
+.aboutText ul li hr{
+    height: 10em;
+}
+
+.aboutText ul li p{
+    font-size: 1.25em;
 }
 
 #bigRegButton {
