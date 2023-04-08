@@ -27,13 +27,13 @@ const HomeNavbar = () => {
           </div>
         </li>
         <li className="navBtns">
-              <Link to='/meals'>
+              <Link to='/meals' id="navBtn">
                 <p>MyMeals</p>
               </Link>
-              <Link to='/plannedmeals'>
+              <Link to='/plannedmeals' id="navBtn">
                 <p>Planned Meals</p>
               </Link>
-              <Link to='/choose'>Choose For Me!</Link>
+              <Link to='/choose' id="navBtn">Choose For Me!</Link>
         </li>
         <li>
           {user ? (

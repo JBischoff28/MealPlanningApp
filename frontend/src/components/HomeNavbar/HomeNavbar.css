@@ -15,3 +15,23 @@ li .userWelcome {
     font-size: 0.75em;
     color: white;
   }
+
+.navBtns {
+    gap: 3em;
+}
+
+#navBtn {
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+}
+#navBtn:hover {
+    background: #c8672162;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    border-radius: 5px;
+    padding-left: 0.25em;
+    padding-bottom: 0.25em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
