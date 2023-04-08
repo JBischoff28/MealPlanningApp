@@ -26,17 +26,17 @@ def user_events(request):
 @permission_classes([IsAuthenticated])
 def user_singleEvent(request, pk):
 
-    meal = get_object_or_404(Event, pk=pk)
+    event = get_object_or_404(Event, pk=pk)
 
     if request.method == 'GET':
-        serializer = EventSerializer(meal)
+        serializer = EventSerializer(event)
         return Response(serializer.data)
     elif request.method == 'PUT':
-        serializer = EventSerializer(meal, data=request.data)
+        serializer = EventSerializer(event, data=request.data)
         if serializer.is_valid():
             serializer.save(user=request.user)
             return Response(data=serializer.data, status=status.HTTP_202_ACCEPTED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'DELETE':
-        meal.delete()
+        event.delete()
         return Response(status=status.HTTP_404_NOT_FOUND)
