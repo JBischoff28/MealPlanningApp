@@ -5,6 +5,7 @@ from rest_framework.decorators import api_view, permission_classes
 from .models import Meal
 from .serializers import MealSerializer
 from django.shortcuts import get_object_or_404
+from dishes.models import Dish
 
 # This function serves for development purposes only, and may be removed before submitting.
 @api_view(['GET'])
@@ -64,3 +65,21 @@ def user_singleMeal(request, pk):
         meal.delete()
         return Response(status=status.HTTP_404_NOT_FOUND)
     
+@api_view(['PATCH'])
+@permission_classes([IsAuthenticated])
+def meal_dish(request, dish_pk, meal_pk):
+
+    try:
+        dish = Dish.objects.get(pk=dish_pk)
+    except:
+        return Response({"message": "Dish not found"}, status=status.HTTP_404_NOT_FOUND)
+    try:
+        meal = Meal.objects.get(pk=meal_pk)
+    except:
+        return Response({"message": "Meal not found"}, status=status.HTTP_404_NOT_FOUND)
+    
+    meal.dish.add(dish)
+    meal.save()
+
+    serializer = MealSerializer(meal)
+    return Response(serializer.data, status=status.HTTP_200_OK)

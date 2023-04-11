@@ -1,6 +1,5 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import useAuth from "../../hooks/useAuth";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import HomeNavbar from "../../components/HomeNavbar/HomeNavbar.jsx";
 import SearchFilters from "../../components/SearchFilters/SearchFilters";
@@ -12,7 +11,6 @@ import "./HomePage.css";
 const HomePage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
-  const [user, token] = useAuth();
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
@@ -34,13 +32,13 @@ const HomePage = () => {
       <HomeNavbar />
       <div className="homePageBody">
         <div className="searchFilters">
-          <SearchFilters recipes={recipes} setRecipes={setRecipes}/>
+          <SearchFilters recipes={recipes} setRecipes={setRecipes} />
         </div>
         <div className="searchBar">
           <SearchBar setRecipes={setRecipes} />
-        </div>
-        <div className="searchResults">
-          <RecipeResult recipes={recipes}/>
+          <div className="searchResults">
+            <RecipeResult recipes={recipes} />
+          </div>
         </div>
       </div>
     </div>
