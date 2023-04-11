@@ -65,7 +65,7 @@ def user_singleMeal(request, pk):
         meal.delete()
         return Response(status=status.HTTP_404_NOT_FOUND)
     
-@api_view(['PATCH'])
+@api_view(['PATCH', 'DELETE'])
 @permission_classes([IsAuthenticated])
 def meal_dish(request, dish_pk, meal_pk):
 
@@ -78,8 +78,13 @@ def meal_dish(request, dish_pk, meal_pk):
     except:
         return Response({"message": "Meal not found"}, status=status.HTTP_404_NOT_FOUND)
     
-    meal.dish.add(dish)
-    meal.save()
+    if request.method == 'PATCH':
+        meal.dish.add(dish)
+        meal.save()
+        serializer = MealSerializer(meal)
+    elif request.method == 'DELETE':
+        meal.dish.remove(dish)
+        meal.save()
+        serializer = MealSerializer(meal)
 
-    serializer = MealSerializer(meal)
     return Response(serializer.data, status=status.HTTP_200_OK)
