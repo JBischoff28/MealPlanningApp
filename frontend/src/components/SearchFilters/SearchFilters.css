@@ -1,0 +1,40 @@
+.filtersBody {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5em;
+}
+
+.mealType {
+    display: flex;
+    gap: 0.5em;
+    flex-direction: column;
+    margin-top: 5em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+
+.dishType {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+
+.dietsToggle {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+}
+
+.dietsToggle input{
+    margin-left: 10px;
+}
+
+#dietsButton {
+    margin-left: 1.5em;
+    border-radius: 1em;
+}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './SearchFilters.css';
 
 
 const SearchFilters = (props) => {
@@ -95,7 +96,7 @@ const SearchFilters = (props) => {
                         <input type='checkbox' id='sodiumToggle' onChange={(event) => setIsSodium(!isSodium)}/>
                     </div>
                 </div>
-                <button type='submit'>Apply Filters</button>
+                <button id='dietsButton' type='submit'>Apply Filters</button>
             </form>
         </div>
      );
