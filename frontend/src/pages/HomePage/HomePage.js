@@ -12,6 +12,7 @@ const HomePage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
   const [recipes, setRecipes] = useState([]);
+  const [globalSearch, setGlobal] = useState("");
 
   useEffect(() => {
     /**fetchRecipes();**/
@@ -32,10 +33,10 @@ const HomePage = () => {
       <HomeNavbar />
       <div className="homePageBody">
         <div className="searchFilters">
-          <SearchFilters recipes={recipes} setRecipes={setRecipes} />
+          <SearchFilters recipes={recipes} setRecipes={setRecipes} search={globalSearch}/>
         </div>
         <div className="searchBar">
-          <SearchBar setRecipes={setRecipes} />
+          <SearchBar setRecipes={setRecipes} setGlobal={setGlobal} />
           <div className="searchResults">
             <RecipeResult recipes={recipes} />
           </div>

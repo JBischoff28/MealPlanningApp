@@ -1,33 +1,34 @@
 import React, { useState } from 'react';
 import './SearchFilters.css';
+import { app_id, app_key } from '../../localKey';
+import axios from 'axios';
 
 
 const SearchFilters = (props) => {
 
     const [mealType, setMealType] = useState('');
     const [dishType, setDishType] = useState('');
-    const [isBalanced, setIsBalanced] = useState(false);
-    const [isFiber, setIsFiber] = useState(false);
-    const [isProtein, setIsProtein] = useState(false);
-    const [isCarb, setIsCarb] = useState(false);
-    const [isFat, setIsFat] = useState(false);
-    const [isSodium, setIsSodium] = useState(false);
+    const [dietType, setDietType] = useState('');
+    const [cuisineType, setCuisineType] = useState('');
 
-    function checkSelected(event) {
-        event.preventDefault();
-        console.log(mealType);
-        console.log(dishType);
-        console.log(isBalanced);
-        console.log(isFiber);
-        console.log(isProtein);
-        console.log(isCarb);
-        console.log(isFat);
-        console.log(isSodium);
+
+    async function applyFilters() {
+        try {
+            let response = await axios.get(`https://api.edamam.com/api/recipes/v2?type=public&q=${props.search}&app_id=${app_id}&app_key=${app_key}&mealType=${mealType}&dishType=${dishType}&cuisineType=${cuisineType}&diet=${dietType}`);
+            props.setRecipes(response.data.hits);
+        } catch (error) {
+            console.log(error);
+        }
     }
 
-    return ( 
+    function handleFilters(event) {
+        event.preventDefault();
+        applyFilters();
+    }
+
+    return (
         <div className='filtersContainer'>
-            <form className='filtersBody' onSubmit={(event) => checkSelected(event)}>
+            <form className='filtersBody' onSubmit={(event) => handleFilters(event)}>
                 <div className='mealType'>
                     <label>Choose a Meal Type:</label>
                     <select name='mealType' id='mealOptions' onChange={(event) => setMealType(event.target.value)}>
@@ -70,36 +71,49 @@ const SearchFilters = (props) => {
                         <option value='sweets'>Sweets</option>
                     </select>
                 </div>
-                <div className='dietsToggle'>
-                    <div className='balanced'>
-                        <label>Balanced</label>
-                        <input type='checkbox' id='balancedToggle' onChange={(event) => setIsBalanced(!isBalanced)}/>
-                    </div>
-                    <div className='fiber'>
-                        <label>High-Fiber</label>
-                        <input type='checkbox' id='fiberToggle' onChange={(event) => setIsFiber(!isFiber)}/>
-                    </div>
-                    <div className='protein'>
-                        <label>High-Protein</label>
-                        <input type='checkbox' id='proteinToggle' onChange={(event) => setIsProtein(!isProtein)}/>
-                    </div>
-                    <div className='carb'>
-                        <label>Low-Carb</label>
-                        <input type='checkbox' id='carbToggle' onChange={(event) => setIsCarb(!isCarb)}/>
-                    </div>
-                    <div className='fat'>
-                        <label>Low-Fat</label>
-                        <input type='checkbox' id='fatToggle' onChange={(event) => setIsFat(!isFat)}/>
-                    </div>
-                    <div className='sodium'>
-                        <label>Low-Sodium</label>
-                        <input type='checkbox' id='sodiumToggle' onChange={(event) => setIsSodium(!isSodium)}/>
-                    </div>
+                <div className='cuisineType'>
+                    <label>Choose a Cuisine Type:</label>
+                    <select name='cuisineType' id='cuisineOptions' onChange={(event) => setCuisineType(event.target.value)}>
+                        <option defaultValue='none'>Select one...</option>
+                        <option value='american'>American</option>
+                        <option value='asian'>Asian</option>
+                        <option value='british'>British</option>
+                        <option value='caribbean'>Caribbean</option>
+                        <option value='central europe'>Central Europe</option>
+                        <option value='chinese'>Chinese</option>
+                        <option value='eastern europe'>Eastern Europe</option>
+                        <option value='french'>French</option>
+                        <option value='greek'>Greek</option>
+                        <option value='indian'>Indian</option>
+                        <option value='italian'>Italian</option>
+                        <option value='japanese'>Japanese</option>
+                        <option value='korean'>Korean</option>
+                        <option value='kosher'>Kosher</option>
+                        <option value='mediterranean'>Mediterranean</option>
+                        <option value='mexican'>Mexican</option>
+                        <option value='middle eastern'>Middle Eastern</option>
+                        <option value='nordic'>Nordic</option>
+                        <option value='south american'>South American</option>
+                        <option value='south east asian'>South East Asian</option>
+                        <option value='world'>World</option>
+                    </select>
+                </div>
+                <div className='dietType'>
+                    <label>Choose a Diet Type:</label>
+                    <select name='dietType' id='dietOptions' onChange={(event) => setDietType(event.target.value)}>
+                        <option defaultValue='none'>Select one...</option>
+                        <option value='balanced'>Balanced</option>
+                        <option value='high-fiber'>High-Fiber</option>
+                        <option value='high-protein'>High-Protein</option>
+                        <option value='low-carb'>Low-Carb</option>
+                        <option value='low-fat'>Low-Fat</option>
+                        <option value='low-sodium'>Low-Sodium</option>
+                    </select>
                 </div>
                 <button id='dietsButton' type='submit'>Apply Filters</button>
             </form>
         </div>
-     );
+    );
 }
- 
+
 export default SearchFilters;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { app_id, app_key } from '../../localKey';
 
-const SearchBar = ({ setRecipes }) => {
+const SearchBar = ({ setRecipes, setGlobal }) => {
 
     const [search, setSearch] = useState("");
     
@@ -18,6 +18,7 @@ const SearchBar = ({ setRecipes }) => {
     function handleSubmit(event) {
         event.preventDefault();
         console.log(search);
+        setGlobal(search);
         if (search !== '') {
             searchRecipes(search);
             setSearch('');
