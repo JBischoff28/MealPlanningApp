@@ -4,13 +4,13 @@ import { app_id, app_key } from '../../localKey';
 import HomeNavbar from '../../components/HomeNavbar/HomeNavbar';
 import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
+import RecipeInfo from '../../components/RecipeInfo';
 
 const RecipePage = (props) => {
 
     const [user, token] = useAuth();
     const { recipeId } = useParams();
     const [thisRecipe, setThisRecipe] = useState([]);
-    console.log(recipeId)
     useEffect(() => {
         GetRecipe();
     }, []);
@@ -46,7 +46,7 @@ const RecipePage = (props) => {
         <div className='recipePageContainer'>
             <HomeNavbar />
             <div className='recipeBody'>
-                <p>See recipe Page!</p>
+                <RecipeInfo />
                 <div className='saveRecipe'>
                     <button className='saveBtn' onClick={(event) => saveRecipe(event)}>Save this recipe!</button>
                 </div>
