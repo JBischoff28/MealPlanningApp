@@ -1,0 +1,23 @@
+.recipePageContainer {
+    height: fit-content;
+    width: 100%;
+    background-color: #46432a98;
+}
+
+.recipeBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.backBtn {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.backBtn a {
+    color: black;
+}
+.backBtn a:hover {
+    color: #c86721;
+}

@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { app_id, app_key } from '../../localKey';
 import HomeNavbar from '../../components/HomeNavbar/HomeNavbar';
-import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
-import RecipeInfo from '../../components/RecipeInfo';
+import RecipeInfo from '../../components/RecipeInfo/RecipeInfo.jsx';
+import './RecipePage.css';
 
-const RecipePage = (props) => {
+const RecipePage = () => {
 
-    const [user, token] = useAuth();
     const { recipeId } = useParams();
     const [thisRecipe, setThisRecipe] = useState([]);
+
     useEffect(() => {
         GetRecipe();
     }, []);
@@ -25,33 +25,15 @@ const RecipePage = (props) => {
         }
     }
 
-    async function saveRecipe(event) {
-        event.preventDefault();
-        try {
-            let postRequest = await axios.post(`http://127.0.0.1:8000/api/dishes/mydishes/`,
-                {
-                    foodId: recipeId,
-                },
-                {
-                    headers: {
-                        Authorization: "Bearer " + token,
-                    },
-                });
-        } catch (error) {
-            console.log(error);
-        }
-    }
+
 
     return (
         <div className='recipePageContainer'>
             <HomeNavbar />
             <div className='recipeBody'>
-                <RecipeInfo />
-                <div className='saveRecipe'>
-                    <button className='saveBtn' onClick={(event) => saveRecipe(event)}>Save this recipe!</button>
-                </div>
+                {thisRecipe.recipe ? <RecipeInfo thisRecipe={thisRecipe} /> : <h2>LOADING...</h2>}
                 <div className='backBtn'>
-                    <Link to={'/home'}>Back</Link>
+                    <Link id='back' to={'/home'}>Back</Link>
                 </div>
             </div>
         </div>

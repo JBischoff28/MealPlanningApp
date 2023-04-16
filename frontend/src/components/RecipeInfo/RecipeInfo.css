@@ -1,0 +1,74 @@
+.infoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5em;
+}
+
+.basicInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: azure;
+    height: fit-content;
+    width: fit-content;
+    padding: 2em;
+    border-radius: 2em;
+}
+
+.recipeTitle {
+    margin-top: 2em;
+}
+
+.basicRecipeInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    margin-top: 1em;
+    width: fit-content;
+}
+
+.saveRecipe button{
+    height: 2.5em;
+    width: 10em;
+    border-radius: 5px;
+}
+.saveRecipe button:hover {
+    background-color: #c8672185;
+    box-shadow: -2px rgba(0, 0, 0, 0.459);
+    cursor: pointer;
+    color: black;
+}
+
+.infoContainer hr {
+    width: 100%;
+    margin-top: 1em;
+}
+
+.advancedInfo {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 8em;
+    margin-top: 2em;
+    background-color: azure;
+    height: fit-content;
+    width: fit-content;
+    padding: 1em;
+    border-radius: 2em;
+}
+
+.sourceSite {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4em;
+}
+
+.sourceSite a {
+    color: #004b06b7;
+}
+.sourceSite a:hover {
+    color: #c86721;
+}
