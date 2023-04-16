@@ -2,5 +2,47 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 5em;
+    flex-direction: column;
+    gap: 2em;
+}
+
+.result {
+    background-color: azure;
+    width: 55em;
+    height: fit-content;
+}
+
+a {
+    text-decoration: none;
+}
+
+hr {
+    margin-left: 1%;
+}
+
+.recipeBasic {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.recipeBasic h4 {
+    margin-top: 1em;
+    margin-bottom: 0.25em;
+}
+
+.resultCard {
+    display: flex;
+    gap: 1em;
+    width: 55em;
+}
+
+#viewLink {
+    height: fit-content;
+    color: #c86721e5;
+}
+
+.rightSide {
     margin-top: 1em;
 }

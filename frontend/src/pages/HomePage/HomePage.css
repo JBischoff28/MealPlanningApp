@@ -8,6 +8,9 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 5em;
 }
 
 .searchFilters {
@@ -20,5 +23,21 @@
 }
 
 .searchBar {
-    margin-top: 2em;
+    margin-top: 3em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+}
+
+#resetBtn {
+    height: 2.5em;
+    width: 10em;
+    border-radius: 5px;
+}
+#resetBtn:hover {
+    background-color: #c8672185;
+    box-shadow: -2px rgba(0, 0, 0, 0.459);
+    cursor: pointer;
+    color: azure;
 }

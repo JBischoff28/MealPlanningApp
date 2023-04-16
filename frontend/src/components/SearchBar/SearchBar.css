@@ -17,4 +17,5 @@ input[type='text'] {
     background-color: #c8672185;
     box-shadow: -2px rgba(0, 0, 0, 0.459);
     cursor: pointer;
+    color: azure;
 }

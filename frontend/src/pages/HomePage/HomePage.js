@@ -15,7 +15,7 @@ const HomePage = () => {
   const [globalSearch, setGlobal] = useState("");
 
   useEffect(() => {
-    /**fetchRecipes();**/
+    /*fetchRecipes();*/
   }, []);
 
   async function fetchRecipes() {
@@ -37,6 +37,7 @@ const HomePage = () => {
         </div>
         <div className="searchBar">
           <SearchBar setRecipes={setRecipes} setGlobal={setGlobal} />
+          <button id='resetBtn' onClick={(event) => fetchRecipes(event)}>Reset Search</button>
         </div>
         <div className="searchResults">
             <RecipeResult recipes={recipes} />
