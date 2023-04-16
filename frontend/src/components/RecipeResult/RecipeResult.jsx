@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import './RecipeResult.css';
 
 const RecipeResult = ({ recipes }) => {
 
@@ -15,10 +16,11 @@ const RecipeResult = ({ recipes }) => {
                         <div className="result" key={recipe.recipe.uri}>
                             <Link to={`/recipe/${editURI(recipe)}`}>
                                 <div className="resultCard">
-                                    <img src={`${recipe.recipe.images.url}`} alt="food"/>
+                                    <img src={recipe.recipe.images.SMALL.url} alt="food"/>
                                     <p>{recipe.recipe.label}</p>
                                 </div>
                             </Link>
+                            <hr/>
                         </div>
                     )
                 }

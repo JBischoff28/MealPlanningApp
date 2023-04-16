@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { app_id, app_key } from '../../localKey';
+import './SearchBar.css';
 
 const SearchBar = ({ setRecipes, setGlobal }) => {
 
@@ -31,12 +32,12 @@ const SearchBar = ({ setRecipes, setGlobal }) => {
 
     return ( 
         <form onSubmit={(event) => handleSubmit(event)}>
-            <ul>
+            <ul id='formList'>
                 <li>
                     <input placeholder='Search for recipes...' type='text' value={search} onChange={(event) => setSearch(event.target.value)} />
                 </li>
                 <li>
-                    <button type='submit'>Search</button>
+                    <button id='searchBtn' type='submit'>Search</button>
                 </li>
             </ul>
         </form>

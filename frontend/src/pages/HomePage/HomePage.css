@@ -3,14 +3,22 @@
 }
 
 .homePageBody {
-    height: 830px;
+    height: fit-content;
     width: 100%;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
 }
 
 .searchFilters {
-    height: 100%;
-    width:fit-content;
+    height: fit-content;
+    width: 100%;
     background-color: #fff8dc6b;
+    display: flex;
+    justify-content: center;
+    box-shadow: 15px black;
+}
+
+.searchBar {
+    margin-top: 2em;
 }

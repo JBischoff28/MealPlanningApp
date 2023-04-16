@@ -37,10 +37,10 @@ const HomePage = () => {
         </div>
         <div className="searchBar">
           <SearchBar setRecipes={setRecipes} setGlobal={setGlobal} />
-          <div className="searchResults">
+        </div>
+        <div className="searchResults">
             <RecipeResult recipes={recipes} />
           </div>
-        </div>
       </div>
     </div>
   );
