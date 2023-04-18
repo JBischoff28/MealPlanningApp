@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { app_id, app_key } from '../../localKey';
 import axios from 'axios';
+import './RecipeCard.css';
 
 
 const RecipeCard = (props) => {
@@ -888,13 +889,12 @@ const RecipeCard = (props) => {
                     { manipulateDishes(dish.foodId) }
                     return (
                         <div className='dish' key={dish.id}>
-                            <Link to={`/recipe/${editURI(dish.foodId)}`}>
-                                <div className='mealLayoutContainer'>
-                                    <img src={recObj.recipe.images.THUMBNAIL.url} alt="" />
-                                    <p>{recObj.recipe.label}</p>
-                                    <p>Dish Calories: {recObj.recipe.calories}</p>
-                                </div>
-                            </Link>
+                            <div className='mealLayoutContainer'>
+                                <img src={recObj.recipe.images.THUMBNAIL.url} alt="" />
+                                <p>{recObj.recipe.label}</p>
+                                <p>Dish Calories: {recObj.recipe.calories}</p>
+                                <Link to={`/recipe/${editURI(dish.foodId)}`}>View Recipe</Link>
+                            </div>
                         </div>
                     );
                 }

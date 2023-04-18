@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import RecipeCard from '../RecipeCard/RecipeCard';
+import './MealCard.css';
 
 
 const MealCard = (props) => {
@@ -11,10 +12,8 @@ const MealCard = (props) => {
                     return (
                         <div className='meal' key={meal.id}>
                             <div className='mealDetails'>
-                                <p>{meal.name}</p>
-                                <div className='mealDishes'>
-                                    <RecipeCard meal={meal}/>
-                                </div>
+                                <h3>{meal.name}</h3>
+                                {meal.dish[0] ? <RecipeCard meal={meal}/> : <h4>No Meals Added</h4>}
                             </div>
                         </div>
                     );

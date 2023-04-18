@@ -4,8 +4,9 @@ import useAuth from '../../hooks/useAuth';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import MealCard from '../../components/MealCard/MealCard';
+import './DisplayMealsPage.css';
 
-const DisplayMealsPage = (props) => {
+const DisplayMealsPage = () => {
 
     const [user, token] = useAuth();
     const [mymeals, setMyMeals] = useState([]);
@@ -30,11 +31,11 @@ const DisplayMealsPage = (props) => {
     return ( 
         <div className="mealsContainer">
             <HomeNavbar />
-            <div className='savedRecipesBtn'>
-                <Link to='/recipes'>Saved Recipes</Link>
-            </div>
             <div className='mealsBody'>
-                <MealCard mymeals={mymeals}/>
+                <div className='savedRecipesBtn'>
+                    <Link to='/recipes'>Saved Recipes</Link>
+                </div>
+                {mymeals[0] ? <MealCard mymeals={mymeals}/> : <h1>Loading</h1>}
             </div>
         </div>
      );

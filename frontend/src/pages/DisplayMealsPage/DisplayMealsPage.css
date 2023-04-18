@@ -1,0 +1,9 @@
+.mealsContainer {
+    background-color: #46432a98;
+}
+
+.mealsBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
