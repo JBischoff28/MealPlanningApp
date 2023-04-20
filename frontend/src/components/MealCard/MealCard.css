@@ -19,6 +19,41 @@
     gap: 0.5em;
 }
 
+#deleteBtn {
+    background-color: #c8672185;
+    border-style: solid;
+    padding: 0.15em;
+    color: black;
+    height: 1.5em;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    border-width: thin;
+    font-size: 1em;
+}
+
+#deleteBtn:hover {
+    background-color: #46432a98;
+    cursor: pointer;
+}
+
+#editBtn {
+    background-color: #c8672185;
+    border-style: solid;
+    padding: 0.15em;
+    color: black;
+    height: 1.5em;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    border-width: thin;
+}
+
+#editBtn:hover {
+    background-color: #46432a98;
+    cursor: pointer;
+}
+
 .mealDetails {
     display: flex;
     flex-direction: column;

@@ -3,6 +3,7 @@ import RecipeCard from '../RecipeCard/RecipeCard';
 import axios from 'axios';
 import useAuth from '../../hooks/useAuth';
 import './MealCard.css';
+import { Link } from 'react-router-dom';
 
 
 const MealCard = (props) => {
@@ -39,8 +40,8 @@ const MealCard = (props) => {
                             <div className='mealHeader'>
                                 <h3>{meal.name}</h3>
                                 <div className='headerBtns'>
-                                    <button>Edit Meal</button>
-                                    <button onClick={(event) => handleDeleteMeal(event, meal.id)}>Delete Meal</button>
+                                    <Link id='editBtn' to={`/mealbuilder/${meal.id}`}>Edit Meal</Link>
+                                    <button id='deleteBtn' onClick={(event) => handleDeleteMeal(event, meal.id)}>Delete Meal</button>
                                 </div>
                             </div>
                             <div className='mealDetails'>

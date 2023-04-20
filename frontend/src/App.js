@@ -59,7 +59,7 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route path="/mealbuilder"
+        <Route path="/mealbuilder/:mealId"
           element={
             <PrivateRoute>
               <MealBuilderPage />
