@@ -24,7 +24,7 @@ const CreateMealForm = (props) => {
                     }
                 });
             console.log(response.status);
-            let tempMeals = [...props.mymeals, response.data];
+            let tempMeals = [response.data, ...props.mymeals];
             props.setMyMeals(tempMeals);
         } catch (error) {
             console.log(error);
