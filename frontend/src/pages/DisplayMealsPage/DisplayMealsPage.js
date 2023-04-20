@@ -36,7 +36,7 @@ const DisplayMealsPage = () => {
                 <div className='savedRecipesBtn'>
                     <Link to='/recipes'>Saved Recipes</Link>
                 </div>
-                <CreateMealForm getUserMeals={getUserMeals}/>
+                <CreateMealForm getUserMeals={getUserMeals} mymeals={mymeals} setMyMeals={setMyMeals}/>
                 {mymeals[0] ? <MealCard mymeals={mymeals}/> : <h1>Loading</h1>}
             </div>
         </div>

@@ -10,7 +10,7 @@ const CreateMealForm = (props) => {
     function handleAddMeal(event) {
         event.preventDefault();
         addMeal();
-        props.getUserMeals();
+        setNewName('');
     }
 
     async function addMeal() {
@@ -24,6 +24,8 @@ const CreateMealForm = (props) => {
                 }
             });
             console.log(request.status);
+            let tempMeals = [...props.mymeals, request.data];
+            props.setMyMeals(tempMeals);
         } catch (error) {
             console.log(error);
         }
