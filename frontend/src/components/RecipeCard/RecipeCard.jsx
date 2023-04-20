@@ -873,6 +873,11 @@ const RecipeCard = (props) => {
         /*fetchDishes(recipeId);*/
     }
 
+    function roundNum(calories) {
+        let caloriesCount = Math.round(calories);
+        return caloriesCount;
+    }
+
     async function fetchDishes(recipeId) {
         try {
             let response = await axios.get(`https://api.edamam.com/api/recipes/v2/${recipeId}?type=public&app_id=${app_id}&app_key=${app_key}`);
@@ -892,7 +897,7 @@ const RecipeCard = (props) => {
                             <div className='mealLayoutContainer'>
                                 <img src={recObj.recipe.images.THUMBNAIL.url} alt="" />
                                 <p>{recObj.recipe.label}</p>
-                                <p>Dish Calories: {recObj.recipe.calories}</p>
+                                <p>Dish Calories: {roundNum(recObj.recipe.calories)}</p>
                                 <Link to={`/recipe/${editURI(dish.foodId)}`}>View Recipe</Link>
                             </div>
                         </div>

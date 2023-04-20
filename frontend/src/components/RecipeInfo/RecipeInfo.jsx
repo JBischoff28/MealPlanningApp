@@ -95,7 +95,7 @@ const RecipeInfo = (props) => {
             </div>
             <div className='sourceSite'>
                 <p>Click the link below to see more about this recipe!</p>
-                <a href={props.thisRecipe.recipe.url}>Click here to see source website</a>
+                <a href={props.thisRecipe.recipe.url} target='_blank'>Click here to see source website</a>
             </div>
         </div>
     );
