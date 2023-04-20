@@ -45,9 +45,8 @@ const MealCard = (props) => {
                                 </div>
                             </div>
                             <div className='mealDetails'>
-                                {meal.dish[0] ? <RecipeCard meal={meal}/> : <h4>No Meals Added</h4>}
+                                {meal.dish[0] ? <RecipeCard meal={meal}/> : <h4>No Recipes Added</h4>}
                             </div>
-
                         </div>
                     );
                 }
