@@ -4,6 +4,7 @@ import useAuth from '../../hooks/useAuth';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import MealCard from '../../components/MealCard/MealCard';
+import CreateMealForm from '../../components/CreateMealForm/CreateMealForm';
 import './DisplayMealsPage.css';
 
 const DisplayMealsPage = () => {
@@ -35,6 +36,7 @@ const DisplayMealsPage = () => {
                 <div className='savedRecipesBtn'>
                     <Link to='/recipes'>Saved Recipes</Link>
                 </div>
+                <CreateMealForm getUserMeals={getUserMeals}/>
                 {mymeals[0] ? <MealCard mymeals={mymeals}/> : <h1>Loading</h1>}
             </div>
         </div>
