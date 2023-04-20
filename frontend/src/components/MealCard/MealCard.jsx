@@ -11,7 +11,9 @@ const MealCard = (props) => {
 
     function handleDeleteMeal(event, id) {
         event.preventDefault();
-        deleteMeal(id)
+        if(window.confirm('Are you sure you want to delete this meal?')) {
+            deleteMeal(id);
+        }
     }
 
     async function deleteMeal(id) {
@@ -34,11 +36,17 @@ const MealCard = (props) => {
                 if (meal) {
                     return (
                         <div className='meal' key={meal.id}>
-                            <div className='mealDetails'>
+                            <div className='mealHeader'>
                                 <h3>{meal.name}</h3>
+                                <div className='headerBtns'>
+                                    <button>Edit Meal</button>
+                                    <button onClick={(event) => handleDeleteMeal(event, meal.id)}>Delete Meal</button>
+                                </div>
+                            </div>
+                            <div className='mealDetails'>
                                 {meal.dish[0] ? <RecipeCard meal={meal}/> : <h4>No Meals Added</h4>}
                             </div>
-                            <button onClick={(event) => handleDeleteMeal(event, meal.id)}>Delete</button>
+
                         </div>
                     );
                 }
