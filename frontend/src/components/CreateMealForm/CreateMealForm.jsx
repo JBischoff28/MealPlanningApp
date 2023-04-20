@@ -15,23 +15,23 @@ const CreateMealForm = (props) => {
 
     async function addMeal() {
         try {
-            let request = await axios.post('http://127.0.0.1:8000/api/meals/mymeals/', {
+            let response = await axios.post('http://127.0.0.1:8000/api/meals/mymeals/', {
                 name: `${newName}`
-            }, 
-            {
-                headers: {
-                    Authorization: "Bearer " + token,
-                }
-            });
-            console.log(request.status);
-            let tempMeals = [...props.mymeals, request.data];
+            },
+                {
+                    headers: {
+                        Authorization: "Bearer " + token,
+                    }
+                });
+            console.log(response.status);
+            let tempMeals = [...props.mymeals, response.data];
             props.setMyMeals(tempMeals);
         } catch (error) {
             console.log(error);
         }
     }
 
-    return ( 
+    return (
         <form className='formContainer' onSubmit={(event) => handleAddMeal(event)}>
             <h3>Create a new meal!</h3>
             <div className='formInput'>
@@ -40,7 +40,7 @@ const CreateMealForm = (props) => {
             </div>
             <button type='submit'>Create!</button>
         </form>
-     );
+    );
 }
- 
+
 export default CreateMealForm;

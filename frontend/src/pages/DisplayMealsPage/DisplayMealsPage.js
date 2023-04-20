@@ -37,7 +37,7 @@ const DisplayMealsPage = () => {
                     <Link to='/recipes'>Saved Recipes</Link>
                 </div>
                 <CreateMealForm getUserMeals={getUserMeals} mymeals={mymeals} setMyMeals={setMyMeals}/>
-                {mymeals[0] ? <MealCard mymeals={mymeals}/> : <h1>Loading</h1>}
+                {mymeals[0] ? <MealCard mymeals={mymeals} getUserMeals={getUserMeals}/> : <h1>Loading</h1>}
             </div>
         </div>
      );
