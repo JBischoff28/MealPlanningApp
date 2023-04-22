@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { app_id, app_key } from '../../localKey';
 import axios from 'axios';
+import '../RecipeCard/RecipeCard.css';
+import useAuth from '../../hooks/useAuth';
 
 
 const EditRecipeCard = (props) => {
 
+    const [user, token] = useAuth();
     const [recObj, setRecObj] = useState({
         "recipe": {
             "uri": "http://www.edamam.com/ontologies/edamam.owl#recipe_9cfe6941a27959b49343b6ec198d56f8",
@@ -886,6 +889,21 @@ const EditRecipeCard = (props) => {
         }
     }
 
+    async function removeRecipe(event, dishId, mealId) {
+        event.preventDefault();
+        try {
+            let response = await axios.delete(`http://127.0.0.1:8000/api/meals/mymeal/dish/${dishId}/meal/${mealId}/`, {
+                headers: {
+                    Authorization: "Bearer " + token,
+                }
+            });
+            console.log(response.statusText);
+            console.log('Recipe removed from meal');
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
     return (
         <div className="recipeCardContainer">
             {props.meal.dish.map((dish) => {
@@ -898,6 +916,7 @@ const EditRecipeCard = (props) => {
                                 <p>{recObj.recipe.label}</p>
                                 <p>Dish Calories: {roundNum(recObj.recipe.calories)}</p>
                                 <Link to={`/recipe/${editURI(dish.foodId)}`}>View Recipe</Link>
+                                <button onClick={(event) => removeRecipe(event, dish.id, props.meal.id)}>Remove Recipe</button>
                             </div>
                         </div>
                     );

@@ -5,6 +5,7 @@ import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
 import EditRecipeCard from '../../components/EditRecipeCard/EditRecipeCard';
 
+
 const MealBuilderPage = () => {
 
     const [user, token] = useAuth();
@@ -33,7 +34,14 @@ const MealBuilderPage = () => {
         <div className='mealBuilderContainer'>
             <HomeNavbar />
             <div className='builderBody'>
-                {meal ? <EditRecipeCard meal={meal} /> : <h2>LOADING...</h2>}
+                <div className='mealCard'>
+                    <div className='mealHeaders'>
+                        <h3>{meal.name}</h3>
+                    </div>
+                    <div className='dishes'>
+                        {meal.dish ? <EditRecipeCard meal={meal} /> : <h2>LOADING...</h2>}
+                    </div>
+                </div>
             </div>
         </div>
      );
