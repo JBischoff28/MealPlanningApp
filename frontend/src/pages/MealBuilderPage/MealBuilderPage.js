@@ -6,6 +6,7 @@ import axios from 'axios';
 import EditRecipeCard from '../../components/EditRecipeCard/EditRecipeCard';
 import './MealBuilderPage.css';
 import EditMealNameForm from '../../components/EditMealNameForm/EditMealNameForm';
+import AddRecipeForm from '../../components/AddRecipeForm/AddRecipeForm';
 
 
 const MealBuilderPage = () => {
@@ -45,6 +46,7 @@ const MealBuilderPage = () => {
                     </div>
                 </div>
                 <EditMealNameForm meal={meal}/>
+                <AddRecipeForm />
             </div>
         </div>
      );
