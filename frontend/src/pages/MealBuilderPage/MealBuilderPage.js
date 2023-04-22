@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
 import EditRecipeCard from '../../components/EditRecipeCard/EditRecipeCard';
+import './MealBuilderPage.css';
 
 
 const MealBuilderPage = () => {

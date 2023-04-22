@@ -1,0 +1,12 @@
+.builderBody {
+    display: flex;
+    justify-content: center;
+}
+
+.recipeCardContainer {
+    margin-top: 1em;
+}
+
+.mealLayoutContainer button{
+    float: right;
+}

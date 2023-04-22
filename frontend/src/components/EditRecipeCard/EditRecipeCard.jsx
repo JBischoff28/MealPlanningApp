@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { app_id, app_key } from '../../localKey';
 import axios from 'axios';
-import '../RecipeCard/RecipeCard.css';
+import './EditRecipeCard.css';
 import useAuth from '../../hooks/useAuth';
 
 
