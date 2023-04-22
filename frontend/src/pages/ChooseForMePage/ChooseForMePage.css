@@ -1,0 +1,17 @@
+.chooseContainer {
+    background-color: #46432a98;
+}
+
+.chooseBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+}
+
+.userInputForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+}

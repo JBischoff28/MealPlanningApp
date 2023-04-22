@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import HomeNavbar from '../../components/HomeNavbar/HomeNavbar';
 import axios from 'axios';
 import { app_id, app_key } from '../../../src/localKey';
+import './ChooseForMePage.css';
+import RandomResult from '../../components/RandomResult/RandomResult';
 
 const ChooseForMePage = () => {
 
@@ -28,16 +30,24 @@ const ChooseForMePage = () => {
         getRandomRecipes(keywords).then(returnRandomRecipe(randomRecipes));
     }
 
+    function handleReset(event) {
+        event.preventDefault();
+        setKeywords('');
+    }
+
     return (
         <div className='chooseContainer'>
             <HomeNavbar />
-            <form className='inputBar' onSubmit={(event) => handleSubmit(event)}>
-                <label>What kind of food do you feel like eating?</label>
-                <input type='text' placeholder='Give us keywords!' value={keywords} onChange={(event) => setKeywords(event.target.value)} />
-                <button type='submit'>GO!</button>
-            </form>
-            <div className='randomResult'>
-                {generated ? <p>{generated.recipe.label}</p> : <p>Press Go</p>}
+            <div className='chooseBody'>
+                <form className='userInputForm' onSubmit={(event) => handleSubmit(event)}>
+                    <label>What kind of food do you feel like eating?</label>
+                    <input type='text' placeholder='Give us keywords!' value={keywords} onChange={(event) => setKeywords(event.target.value)} />
+                    <button type='submit'>GO!</button>
+                    <button onClick={(event) => handleReset(event)}>Reset</button>
+                </form>
+                <div className='randomResult'>
+                    {generated ? <RandomResult generated={generated} /> : null}
+                </div>
             </div>
         </div>
     );
