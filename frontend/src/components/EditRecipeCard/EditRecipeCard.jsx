@@ -899,6 +899,7 @@ const EditRecipeCard = (props) => {
             });
             console.log(response.statusText);
             console.log('Recipe removed from meal');
+            setTimeout(1000, props.getMeal());
         } catch (error) {
             console.log(error)
         }

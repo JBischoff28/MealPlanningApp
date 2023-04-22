@@ -5,6 +5,7 @@ import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
 import EditRecipeCard from '../../components/EditRecipeCard/EditRecipeCard';
 import './MealBuilderPage.css';
+import EditMealNameForm from '../../components/EditMealNameForm/EditMealNameForm';
 
 
 const MealBuilderPage = () => {
@@ -40,9 +41,10 @@ const MealBuilderPage = () => {
                         <h3>{meal.name}</h3>
                     </div>
                     <div className='dishes'>
-                        {meal.dish ? <EditRecipeCard meal={meal} /> : <h2>LOADING...</h2>}
+                        {meal.dish ? <EditRecipeCard meal={meal} getMeal={getMeal} /> : <h2>LOADING...</h2>}
                     </div>
                 </div>
+                <EditMealNameForm meal={meal}/>
             </div>
         </div>
      );
