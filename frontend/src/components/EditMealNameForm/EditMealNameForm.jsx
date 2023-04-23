@@ -34,7 +34,7 @@ const EditMealNameForm = (props) => {
         <form className='mealNameForm' onSubmit={(event) => handleNameChange(event)}>
             <label>Change Meal Name?</label>
             <input type='text' placeholder='Enter new name!' value={newName} onChange={(event) => setNewName(event.target.value)} />
-            <button type='submit'>Submit New Name!</button>
+            <button id='changeFormBtn' type='submit'>Submit New Name!</button>
         </form>
     );
 }
