@@ -4,6 +4,7 @@ import axios from 'axios';
 import { app_id, app_key } from '../../../src/localKey';
 import './ChooseForMePage.css';
 import RandomResult from '../../components/RandomResult/RandomResult';
+import { Link } from 'react-router-dom';
 
 const ChooseForMePage = () => {
 
@@ -33,6 +34,13 @@ const ChooseForMePage = () => {
     function handleReset(event) {
         event.preventDefault();
         setKeywords('');
+        setGenerated();
+        setRandomRecipes([]);
+    }
+
+    function editURI(recipe) {
+        let recipeId = recipe.recipe.uri.substr(44);
+        return recipeId;
     }
 
     return (
