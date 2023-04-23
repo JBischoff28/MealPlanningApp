@@ -5,6 +5,7 @@ import { app_id, app_key } from '../../../src/localKey';
 import './ChooseForMePage.css';
 import RandomResult from '../../components/RandomResult/RandomResult';
 import { Link } from 'react-router-dom';
+import FunFacts from '../../components/FunFacts/FunFacts';
 
 const ChooseForMePage = () => {
 
@@ -38,11 +39,6 @@ const ChooseForMePage = () => {
         setRandomRecipes([]);
     }
 
-    function editURI(recipe) {
-        let recipeId = recipe.recipe.uri.substr(44);
-        return recipeId;
-    }
-
     return (
         <div className='chooseContainer'>
             <HomeNavbar />
@@ -54,7 +50,7 @@ const ChooseForMePage = () => {
                     <button onClick={(event) => handleReset(event)}>Reset</button>
                 </form>
                 <div className='randomResult'>
-                    {generated ? <RandomResult generated={generated} /> : null}
+                    {generated ? <RandomResult generated={generated} /> : <FunFacts />}
                 </div>
             </div>
         </div>

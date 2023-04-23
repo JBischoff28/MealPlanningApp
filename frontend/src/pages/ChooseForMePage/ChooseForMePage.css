@@ -7,6 +7,7 @@
     flex-direction: column;
     align-items: center;
     gap: 3em;
+    padding-bottom: 5em;
 }
 
 .userInputForm {
@@ -14,4 +15,33 @@
     flex-direction: column;
     align-items: center;
     gap: 1em;
+    margin-top: 5em;
+}
+
+.userInputForm label {
+    font-size: 1.5em;
+}
+
+.randomResult {
+    margin-top: 2em;
+    height: fit-content;
+    width: fit-content;
+    background-color: azure;
+    padding: 1.5em;
+    border-radius: 1em;
+}
+
+.generatedContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+}
+
+.funFactContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+    margin-top: 5em;
 }
