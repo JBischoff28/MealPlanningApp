@@ -60,7 +60,7 @@ const AddRecipeForm = (props) => {
                     if(recipe) {
                         return (
                             <div className='recipe' key={recipe.id}>
-                                <div>{recipe.id ? <p>Meal Id: {recipe.id}</p> : <p>LOADING...</p>}</div>
+                                <div>{recipe.id ? <p>Recipe Id: {recipe.id}</p> : <p>LOADING...</p>}</div>
                                 <button onClick={(event) => handleAddRecipe(event, recipe.id, props.meal.id)}>Add To Meal</button>
                             </div>
                         );
