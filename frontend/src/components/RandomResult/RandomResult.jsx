@@ -12,7 +12,7 @@ const RandomResult = (props) => {
         <div className='generatedContainer'>
             <img src={props.generated.recipe.images.REGULAR.url} alt='food'/>
             <h3>{props.generated.recipe.label}</h3>
-            <Link to={`/recipe/${editURI(props.generated)}`}>
+            <Link id='viewLink' to={`/recipe/${editURI(props.generated)}`}>
                 <p>View Recipe</p>
             </Link>
         </div>

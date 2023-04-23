@@ -15,7 +15,7 @@ const HomePage = () => {
   const [globalSearch, setGlobal] = useState("");
 
   useEffect(() => {
-    /*fetchRecipes();*/
+    fetchRecipes();
   }, []);
 
   async function fetchRecipes() {

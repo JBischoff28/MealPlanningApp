@@ -7,3 +7,25 @@
     flex-direction: column;
     align-items: center;
 }
+
+.savedRecipesBtn {
+    margin-top: 4em;
+}
+
+.savedRecipesBtn a{
+    background-color: #c8672185;
+    border-style: solid;
+    padding: 0.4em;
+    color: black;
+    height: fit-content;
+    width: fit-content;
+    border-width: thin;
+    border-radius: 1em;
+    border-color: black;
+}
+
+.savedRecipesBtn:hover a{
+    background-color: #46432ad0;
+    cursor: pointer;
+    color: azure;
+}

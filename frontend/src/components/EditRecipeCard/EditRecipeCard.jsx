@@ -916,8 +916,8 @@ const EditRecipeCard = (props) => {
                                 <img src={recObj.recipe.images.THUMBNAIL.url} alt="" />
                                 <p>{recObj.recipe.label}</p>
                                 <p>Dish Calories: {roundNum(recObj.recipe.calories)}</p>
-                                <Link to={`/recipe/${editURI(dish.foodId)}`}>View Recipe</Link>
-                                <button onClick={(event) => removeRecipe(event, dish.id, props.meal.id)}>Remove Recipe</button>
+                                <Link id='viewLink' to={`/recipe/${editURI(dish.foodId)}`}>View Recipe</Link>
+                                <button id='removeBtn' onClick={(event) => removeRecipe(event, dish.id, props.meal.id)}>Remove Recipe</button>
                             </div>
                         </div>
                     );

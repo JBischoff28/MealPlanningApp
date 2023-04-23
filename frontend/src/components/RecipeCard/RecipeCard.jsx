@@ -898,7 +898,7 @@ const RecipeCard = (props) => {
                                 <img src={recObj.recipe.images.THUMBNAIL.url} alt="" />
                                 <p>{recObj.recipe.label}</p>
                                 <p>Dish Calories: {roundNum(recObj.recipe.calories)}</p>
-                                <Link to={`/recipe/${editURI(dish.foodId)}`}>View Recipe</Link>
+                                <Link id='viewLink' to={`/recipe/${editURI(dish.foodId)}`}>View Recipe</Link>
                             </div>
                         </div>
                     );

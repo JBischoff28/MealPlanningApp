@@ -15,3 +15,15 @@
 .mealLayoutContainer button{
     float: right;
 }
+
+#removeBtn {
+    border-radius: 5px;
+    padding: 0.3em;
+    background-color: #c8672196;
+}
+
+#removeBtn:hover {
+    background-color: #1c3a18a8;
+    cursor: pointer;
+    color: azure;
+}
