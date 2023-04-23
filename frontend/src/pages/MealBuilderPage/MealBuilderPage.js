@@ -45,8 +45,8 @@ const MealBuilderPage = () => {
                         {meal.dish ? <EditRecipeCard meal={meal} getMeal={getMeal} /> : <h2>LOADING...</h2>}
                     </div>
                 </div>
-                <EditMealNameForm meal={meal}/>
-                <AddRecipeForm />
+                <EditMealNameForm meal={meal} getMeal={getMeal}/>
+                <AddRecipeForm meal={meal} getMeal={getMeal}/>
             </div>
         </div>
      );

@@ -34,6 +34,25 @@ const AddRecipeForm = (props) => {
         }
     }
 
+    async function addToMeal(recipeId, mealId) {
+        try {
+            let response = await axios.patch(`http://127.0.0.1:8000/api/meals/mymeal/dish/${recipeId}/meal/${mealId}/`, {
+                headers: {
+                    Authorization: "Bearer " + token,
+                }
+            });
+            console.log(response.status);
+            setTimeout(1000, props.getMeal());
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    function handleAddRecipe(event, recipeId, mealId) {
+        event.preventDefault();
+        addToMeal(recipeId, mealId);
+    }
+
     return ( 
         <div className='savedRecipesContainer'>
             <div className='singleRecipe'>
@@ -41,7 +60,8 @@ const AddRecipeForm = (props) => {
                     if(recipe) {
                         return (
                             <div className='recipe' key={recipe.id}>
-                                <p>{recipe.id ? fetchDishes(recipe.id) : <p>LOADING...</p>}</p>
+                                <div>{recipe.id ? <p>Meal Id: {recipe.id}</p> : <p>LOADING...</p>}</div>
+                                <button onClick={(event) => handleAddRecipe(event, recipe.id, props.meal.id)}>Add To Meal</button>
                             </div>
                         );
                     }

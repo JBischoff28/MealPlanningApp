@@ -4,6 +4,8 @@
     flex-direction: column;
     align-items: center;
     gap: 5em;
+    padding-left: 5em;
+    padding-right: 5em;
 }
 
 .recipeCardContainer {

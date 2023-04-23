@@ -19,3 +19,11 @@
     align-items: center;
     gap: 1em;
 }
+
+.recipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    margin-bottom: 2em;
+}
