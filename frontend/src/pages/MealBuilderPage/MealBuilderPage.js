@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import HomeNavbar from '../../components/HomeNavbar/HomeNavbar';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
 import EditRecipeCard from '../../components/EditRecipeCard/EditRecipeCard';
@@ -37,6 +37,9 @@ const MealBuilderPage = () => {
         <div className='mealBuilderContainer'>
             <HomeNavbar />
             <div className='builderBody'>
+                <div className='backBtn'>
+                    <Link to='/meals'>Back To All Meals</Link>
+                </div>
                 <div className='mealCard'>
                     <div className='mealHeaders'>
                         <h3>{meal.name}</h3>
