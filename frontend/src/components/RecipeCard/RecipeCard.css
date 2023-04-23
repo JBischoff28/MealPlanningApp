@@ -2,3 +2,10 @@
     display: flex;
     gap: 5em;
 }
+
+.mealLayoutContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+}

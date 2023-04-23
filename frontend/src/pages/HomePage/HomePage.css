@@ -35,7 +35,7 @@
     height: 2.5em;
     width: 10em;
     border-radius: 5px;
-    color: azure;
+    font-weight: 600;
 }
 
 #resetBtn:hover {

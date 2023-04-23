@@ -13,10 +13,11 @@ input[type='text'] {
     height: 2em;
     width: 4em;
     border-radius: 5px;
-    color: azure;
+    font-weight: 600;
 }
 #searchBtn:hover {
     background-color: #46432a98;
     box-shadow: -2px rgba(0, 0, 0, 0.459);
     cursor: pointer;
+    color: azure;
 }

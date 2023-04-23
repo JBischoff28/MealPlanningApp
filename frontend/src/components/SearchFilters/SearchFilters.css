@@ -45,11 +45,12 @@
     width: 7em;
     margin-left: 1.5em;
     border-radius: 1em;
-    color: azure;
+    font-weight: 600;
 }
 
 #dietsButton:hover {
     background-color: #46432a98;
     box-shadow: -2px rgba(0, 0, 0, 0.459);
     cursor: pointer;
+    color: azure;
 }

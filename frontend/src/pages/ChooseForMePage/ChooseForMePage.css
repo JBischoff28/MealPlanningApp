@@ -19,14 +19,16 @@
 }
 
 .userInputForm button {
+    background-color: #c8672185;
     height: fit-content;
     width: fit-content;
     padding: 0.5em;
     border-radius: 5px;
+    font-weight: 600;
 }
 
 .userInputForm button:hover {
-    background-color: #c8672185;
+    background-color: #46432a98;
     box-shadow: -2px rgba(0, 0, 0, 0.459);
     cursor: pointer;
     color: azure;
