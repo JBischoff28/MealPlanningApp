@@ -31,12 +31,15 @@
 }
 
 #resetBtn {
+    background-color: #c8672185;
     height: 2.5em;
     width: 10em;
     border-radius: 5px;
+    color: azure;
 }
+
 #resetBtn:hover {
-    background-color: #c8672185;
+    background-color: #46432a98;
     box-shadow: -2px rgba(0, 0, 0, 0.459);
     cursor: pointer;
     color: azure;

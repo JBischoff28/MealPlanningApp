@@ -43,6 +43,10 @@ hr {
     color: #c86721e5;
 }
 
+#viewLink:hover {
+    color: #1c3a18dc;
+}
+
 .rightSide {
     margin-top: 1em;
 }
