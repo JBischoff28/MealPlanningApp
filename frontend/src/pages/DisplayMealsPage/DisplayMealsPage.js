@@ -6,6 +6,7 @@ import axios from 'axios';
 import MealCard from '../../components/MealCard/MealCard';
 import CreateMealForm from '../../components/CreateMealForm/CreateMealForm';
 import './DisplayMealsPage.css';
+import NothingToShow from '../../components/NothingToShow/NothingToShow';
 
 const DisplayMealsPage = () => {
 
@@ -37,7 +38,7 @@ const DisplayMealsPage = () => {
                     <Link to='/recipes'>Saved Recipes</Link>
                 </div>
                 <CreateMealForm getUserMeals={getUserMeals} mymeals={mymeals} setMyMeals={setMyMeals}/>
-                {mymeals[0] ? <MealCard mymeals={mymeals} getUserMeals={getUserMeals}/> : <h1>Loading</h1>}
+                {mymeals[0] ? <MealCard mymeals={mymeals} getUserMeals={getUserMeals}/> : <NothingToShow />}
             </div>
         </div>
      );

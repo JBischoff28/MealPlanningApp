@@ -1,0 +1,14 @@
+.nothing {
+    height: fit-content;
+    width: fit-content;
+    background-color: azure;
+    border-radius: 1em;
+    margin-top: 5em;
+    padding-bottom: 20em;
+    margin-bottom: 5em;
+    display: flex;
+}
+
+.nothing h1 {
+    padding: 5em;
+}

@@ -3,6 +3,8 @@ import axios from 'axios';
 import useAuth from '../../hooks/useAuth';
 import HomeNavbar from "../../components/HomeNavbar/HomeNavbar";
 import './DisplayRecipesPage.css';
+import DisplaySavedRecipes from '../../components/DisplaySavedRecipes/DisplaySavedRecipes';
+import NothingToShow from '../../components/NothingToShow/NothingToShow';
 
 const DisplayRecipesPage = () => {
 
@@ -29,18 +31,9 @@ const DisplayRecipesPage = () => {
     return ( 
         <div className="displayRecipesContainer">
             <HomeNavbar />
-            <div className='savedRecipesContainer'>
-                <div className='singleRecipe'>
-                    {myRecipes.map((recipe) => {
-                        if(recipe) {
-                            return (
-                                <div className='recipe' key={recipe.id}>
-                                    <div>{recipe.id ? <p>Recipe Id: {recipe.id}</p> : <p>LOADING...</p>}</div>
-                                </div>
-                            );
-                        }
-                    })}
-                </div>
+            <div className='displayRecipesBody'>
+                <h2>My Saved Recipes:</h2>
+                {myRecipes[0] ? <DisplaySavedRecipes myRecipes={myRecipes} /> : <NothingToShow />}
             </div>
         </div>
      );
