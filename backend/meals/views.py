@@ -66,7 +66,7 @@ def user_singleMeal(request, pk):
         return Response(status=status.HTTP_404_NOT_FOUND)
     
 @api_view(['PATCH', 'DELETE'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def meal_dish(request, dish_pk, meal_pk):
 
     try:
