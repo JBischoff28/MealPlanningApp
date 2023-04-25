@@ -5,3 +5,27 @@
 .calendar {
     padding: 5em;
 }
+
+.addEventForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    margin-top: 5em;
+}
+
+.addEventForm label {
+    font-size: 1.5em;
+}
+
+#addEventBtn {
+    border-radius: 5px;
+    padding: 0.3em;
+    background-color: #c8672196;
+}
+
+#addEventBtn:hover {
+    background-color: #1c3a1886;
+    cursor: pointer;
+    color: azure;
+}

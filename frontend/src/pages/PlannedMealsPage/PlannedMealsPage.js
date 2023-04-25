@@ -1,11 +1,11 @@
 import HomeNavbar from '../../components/HomeNavbar/HomeNavbar';
 import React, { useState } from 'react';
-import { formatDate } from '@fullcalendar/core';
 import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import './PlannedMealsPage.css';
+import AddEventForm from '../../components/AddEventForm/AddEventForm';
 
 
 const PlannedMealsPage = () => {
@@ -38,6 +38,7 @@ const PlannedMealsPage = () => {
     return (
         <div className='plannedMealsContainer'>
             <HomeNavbar />
+            <AddEventForm setEvents={setEvents} events={events}/>
             <div className='calendar'>
                 <FullCalendar
                     plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
