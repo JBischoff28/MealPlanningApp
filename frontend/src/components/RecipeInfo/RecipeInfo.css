@@ -29,11 +29,12 @@
     width: fit-content;
 }
 
-.saveRecipe button{
+.saveRecipe button {
     height: 2.5em;
     width: 10em;
     border-radius: 5px;
 }
+
 .saveRecipe button:hover {
     background-color: #c8672185;
     box-shadow: -2px rgba(0, 0, 0, 0.459);
@@ -69,6 +70,11 @@
 .sourceSite a {
     color: #004b06b7;
 }
+
 .sourceSite a:hover {
     color: #c86721;
+}
+
+#savedText {
+    color: green;
 }

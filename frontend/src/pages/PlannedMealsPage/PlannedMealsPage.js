@@ -5,6 +5,7 @@ import FullCalendar from '@fullcalendar/react';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
+import './PlannedMealsPage.css';
 
 
 const PlannedMealsPage = () => {
@@ -29,12 +30,8 @@ const PlannedMealsPage = () => {
     }
 
     function handleClick(clickInfo) {
-        let confirmed = prompt("Enter 'Yes' to delete this planned meal.")
-        if (confirmed === 'yes' || confirmed === 'Yes') {
+        if (window.confirm('Are you sure you want to delete this event?')) {
             clickInfo.event.remove();
-        }
-        else {
-            alert("Aborting deletion!");
         }
     }
 
@@ -52,15 +49,12 @@ const PlannedMealsPage = () => {
                     initialView='dayGridMonth'
                     editable={true}
                     selectable={true}
-                    events={[]}
+                    events={events}
                     select={handleDateSelect}
                     eventContent={null}
                     eventClick={handleClick}
                 />
             </div>
-            <form className='addEventForm'>
-
-            </form>
         </div>
     );
 }

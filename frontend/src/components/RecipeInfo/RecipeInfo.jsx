@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './RecipeInfo.css';
 import useAuth from '../../hooks/useAuth';
 import axios from 'axios';
@@ -6,8 +6,10 @@ import axios from 'axios';
 const RecipeInfo = (props) => {
 
     const [user, token] = useAuth();
+    const [saved, setSaved] = useState();
 
     async function saveRecipe(event) {
+        setSaved(true);
         event.preventDefault();
         try {
             let postRequest = await axios.post(`http://127.0.0.1:8000/api/dishes/mydishes/`,
@@ -53,6 +55,9 @@ const RecipeInfo = (props) => {
                     <p>Servings: {props.thisRecipe.recipe.yield}</p>
                     <div className='saveRecipe'>
                         <button className='saveBtn' onClick={(event) => saveRecipe(event)}>Save this recipe!</button>
+                    </div>
+                    <div id='savedText'>
+                        {saved ? <p>Successfully Saved!</p> : null}
                     </div>
                 </div>
             </div>
