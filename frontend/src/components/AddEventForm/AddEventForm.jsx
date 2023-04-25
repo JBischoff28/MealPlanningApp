@@ -44,7 +44,7 @@ const AddEventForm = (props) => {
     }*/
 
     return ( 
-        <form className='addEventForm' onSubmit={(event) => handleSubmit(event)}>
+        <form className='addEventForm'>
             <label>Add New Event!</label>
             <input placeholder='New Meal Title' type='text' />
             <input type='date' />
