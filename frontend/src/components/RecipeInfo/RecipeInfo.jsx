@@ -77,7 +77,7 @@ const RecipeInfo = (props) => {
                 </div>
                 <div className='healthLabels'>
                     {props.thisRecipe.recipe.healthLabels[0] ?
-                        <div>Diet Labels: {props.thisRecipe.recipe.healthLabels.map((label, index) => {
+                        <div>Health Labels: {props.thisRecipe.recipe.healthLabels.map((label, index) => {
                             return (
                                 <div key={index}>
                                     {label}
