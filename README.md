@@ -1,6 +1,6 @@
 # mealControl
 
-## This project has been discountinued!!
+## This project has been discontinued!!
 
 ### What is mealControl & why was it developed?
 This application is my submission for the Capstone project assignment at devCodeCamp, while pursuing my Full Stack Development certification. It was origionally inspired by a need that was experienced in my own personal life. mealControl is the first project that I developed from start to finish, with minimal outside assistance.
